@@ -13,10 +13,9 @@ let defense;
 let scaling;
 let attrReq; 
 let attrAmount;
-
 let rand;
 
-async function getEldenRing() {
+async function getEldenRingWeapon() {
 
 	// Making an API call (request)
 	// and getting the response back
@@ -24,8 +23,8 @@ async function getEldenRing() {
 
 	// Parsing it to JSON format
 	const data = await response.json();
-    rand = Math.floor(Math.random() * data.count)
 
+    rand = Math.floor(Math.random() * data.count)
 
 	// Retrieving data from JSON
 	const eldenring = data.data[rand];
@@ -39,7 +38,7 @@ async function getEldenRing() {
 	category = eldenring.category;
 	weight = eldenring.weight;
 
-	// accessing the span container
+    // updating table content
     fillTable();
 };
 
@@ -54,18 +53,6 @@ function fillTable() {
 	document.querySelector("#category").textContent = category;
 	document.querySelector("#weight").textContent = weight;
 };
-
-// function clearTable() {
-//     document.querySelector("#weapon").textContent = '';
-//     document.querySelector("#image").textContent = '';
-// 	document.querySelector("#description").textContent = '';
-//     document.querySelector("#attack").textContent = '';
-//     document.querySelector("#defense").textContent = '';
-//     document.querySelector("#scaling").textContent = '';
-//     document.querySelector("#attribute").textContent = '';
-// 	document.querySelector("#category").textContent = '';
-// 	document.querySelector("#weight").textContent = '';
-// };
 
 function getAttackValues(array) {
     let attackValues = ``;
@@ -111,18 +98,7 @@ function getAttrReqs(array) {
     return attrReqValues;
 };
 
-function getAndDisplay() {
-    rand = Math.floor(Math.random() * 100);
-    getEldenRing();
-}
 
-// function iterate(array) {
-//     array.forEach(function() {
-//         if (array.item.contains('Phy'))
-//     })
-// }
-// Calling the function
-getEldenRing();
+getEldenRingWeapon();
 
-resultBtn.addEventListener('click', getAndDisplay);
-// clearBtn.addEventListener('click', clearTable);
+resultBtn.addEventListener('click', getEldenRingWeapon);
