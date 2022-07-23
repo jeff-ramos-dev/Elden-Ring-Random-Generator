@@ -38,6 +38,7 @@ async function getEldenRingWeapon() {
 	category = eldenring.category;
 	weight = eldenring.weight;
 
+    console.log(image)
     // updating table content
     fillTable();
 };
@@ -52,6 +53,7 @@ function fillTable() {
     document.querySelector("#attribute").textContent = attrReq;
 	document.querySelector("#category").textContent = category;
 	document.querySelector("#weight").textContent = weight;
+    // document.getElementById("table").style.backgroundImage = `url(${image})`
 };
 
 function getAttackValues(array) {

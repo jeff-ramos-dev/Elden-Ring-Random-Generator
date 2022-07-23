@@ -43,6 +43,9 @@ header {
     z-index: 2;
 }
 
+.label {
+    color: rgb(202, 131, 0);
+}
 body {
     margin: 0;
     background-image: radial-gradient(#3f3f3f, black);
@@ -79,7 +82,6 @@ h1 {
     place-self: center;
 }
 
-
 table,
 td {
     border-collapse: collapse;
@@ -94,9 +96,8 @@ td {
 }
 
 table {
-    background-image: radial-gradient(#aa44ee, #131313);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 20rem;
     background-position: center;
 }
 
