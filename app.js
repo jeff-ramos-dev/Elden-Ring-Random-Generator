@@ -63,6 +63,7 @@ function getAttackValues(array) {
             attackValues += `${item.name}: ${item.amount} | `;
         };
     });
+    attackValues = attackValues.slice(0, -2)
     return attackValues;
 };
 
@@ -76,6 +77,7 @@ function getDefenseValues(array) {
     if (defenseValues == ``) {
         return 'None';
     } else {
+        defenseValues = defenseValues.slice(0, -2)
         return defenseValues;
     };
 };
@@ -88,6 +90,7 @@ function getScaling(array) {
     if (scalingValues == "-: undefined | ") {
         return 'None';
     } else {
+        scalingValues = scalingValues.slice(0, -2)
         return scalingValues;
     };
 };
@@ -97,6 +100,7 @@ function getAttrReqs(array) {
     array.forEach(function(item) {
         attrReqValues = `${item.name}: ${item.amount} | `;
     });
+    attrReqValues = attrReqValues.slice(0, -2)
     return attrReqValues;
 };
 
